@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    class Student
+    {
+        public string name, surname;
+        public int age;
+        public Student (string name, string surname, int age)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.age = age;
+        }
+        public override string ToString()
+        {
+            return name + " " + surname + " " + age;
+        }
+    }
     class Program
     {
-        static bool check (int x)
-        {
-            for (int i = 2; i < x; ++i)
-                if (x % i == 0)
-                    return false;
-            if (x == 1)
-                return false;
-            return true;
-        }
         static void Main(string[] args)
         {
-            foreach (string s in args)
-            {
-                int p = int.Parse(s);
-                if (check(p))
-                    Console.WriteLine(p);
-            }
+            Student a = new Student("Marat", "Ospanov", 17);
+            Console.WriteLine(a);
+            Console.ReadKey();
         }
     }
 }
